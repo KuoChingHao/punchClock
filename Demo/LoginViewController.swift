@@ -26,7 +26,8 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        
+        let urlString = SERVER_URL_STRING
+
     }
     
     

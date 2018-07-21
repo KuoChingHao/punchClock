@@ -52,10 +52,9 @@ class GuideViewController: UIViewController {
         let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
         self.present(loginViewController, animated: true, completion: nil)
-        
+ 
     }
     
-
 }
 
 

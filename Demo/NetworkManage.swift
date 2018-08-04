@@ -19,12 +19,10 @@ class NetworkManage: NSObject {
     //程式活著只會初始化一次
     static let sharedInstance = NetworkManage()
     
-    func urlTask(method : HTTPMethod,params : Dictionary<String , Any>?,completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func urlTask(urlString : String , method : HTTPMethod,params : Dictionary<String , Any>?,completionHandler: @escaping (Data?, URLResponse?, Error?) -> ()) {
         //session init
         let session = URLSession(configuration: .default)
         
-        //網址
-        let urlString = SERVER_URL_STRING
         //產生URL 如果不是URL就不往下處理
         guard let url = URL(string: urlString) else {
             return

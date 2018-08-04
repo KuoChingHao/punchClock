@@ -9,7 +9,7 @@
 import UIKit
 
 //超級全域變數
-let SERVER_URL_STRING = "http://192.168.2.195:8888/PunchClock/index.php/boss/create"
+let SERVER_URL_STRING = "http://192.168.2.195:8888/PunchClock/index.php/"
 
 
 

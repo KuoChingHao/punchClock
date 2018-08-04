@@ -82,7 +82,7 @@ class RgisterViewController: UIViewController {
         //把key 跟 資料建立起來。
         let dictionary = ["email":email,"password":password,"nickname":nickname]
 
-        NetworkManage.sharedInstance.urlTask(method: .POST, params: dictionary) { (data, response, error) in
+        NetworkManage.sharedInstance.urlTask(urlString : SERVER_URL_STRING + "boss/create",method: .POST, params: dictionary) { (data, response, error) in
             
             //結束會回傳 資料(data) 跟 傳輸的資訊(response) 或是 錯誤(error)
             //如果有錯誤 就表示請求失敗

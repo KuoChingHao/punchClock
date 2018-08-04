@@ -26,8 +26,24 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        let urlString = SERVER_URL_STRING
+        
+        //檢查email 如果長度> 0 才可以繼續往下執行
+        guard let email = accountTextField.text , email.count > 0 else {
+            print("未輸入 email")
+            
+            errorAlert(message: "未輸入 email")
+            return
+        }
+        guard let password = passwordTextField.text , password.count > 0 else {
+            print("未輸入 password")
+            errorAlert(message: "未輸入 password")
+            
+            return
+        }
 
+        
+        
+        
     }
     
     

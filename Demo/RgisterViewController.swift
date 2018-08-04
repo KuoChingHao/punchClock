@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RgisterViewController: UIViewController {
+class RgisterViewController: BaseViewController {
 
     
     @IBOutlet weak var emailTextField: BaseTextField!
@@ -114,7 +114,7 @@ class RgisterViewController: UIViewController {
                   
                     //因為URLTask 是開一個執行緒，所以結束後要做UI處理的話要回到主執行緒上
                     DispatchQueue.main.async {
-                        self.showAlert()
+                        self.showAlert(message: "註冊成功")
                     }
                     
                     
@@ -219,44 +219,6 @@ class RgisterViewController: UIViewController {
 //        //啟動dataTask 去執行
 //        dataTask.resume()
     }
-    
-    func errorAlert(message : String) {
-        
-        //初始化方式
-        let alertController = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
-        //初始化按鈕
-        let action = UIAlertAction(title: "ＯＫ", style: .cancel) { (action) in
-            //按下按鈕要做的事情
-            print("我按了 \(action.title!)")
-        }
-        
-        //加入按鈕到alertController
-        alertController.addAction(action)
-        //呈現出來
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    func showAlert() {
-        
-        //初始化方式
-        let alertController = UIAlertController(title: "恭喜", message: "註冊成功", preferredStyle: .alert)
-        //初始化按鈕
-        let action = UIAlertAction(title: "ＯＫ", style: .cancel) { (action) in
-            //按下按鈕要做的事情
-            print("我按了 \(action.title!)")
-            
-            self.dismiss(animated: true, completion: nil)
-            
-        }
-        
-        //加入按鈕到alertController
-        alertController.addAction(action)
-        //呈現出來
-        self.present(alertController, animated: true, completion: nil)
-        
-    }
-
     
 }
 

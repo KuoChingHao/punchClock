@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     
     @IBOutlet weak var accountTextField: BaseTextField!
@@ -41,6 +41,51 @@ class LoginViewController: UIViewController {
             return
         }
 
+        //把key 跟 資料建立起來。
+        let dictionary = ["email":email,"password":password]
+
+        NetworkManage.sharedInstance.urlTask(urlString: SERVER_URL_STRING + "boss/login", method: .POST, params: dictionary) { (data, response, error) in
+            
+            if let httpError = error {
+                //印出失敗的內容
+                print("失敗 : \(httpError.localizedDescription)")
+            }else {
+                
+                //檢查是否有狀態碼
+                guard let httpResponse = response as? HTTPURLResponse , httpResponse.statusCode == 200 else {
+                    print("狀態碼錯誤")
+                    return
+                }
+                //檢查是否有資料
+                guard let unwappData = data else {
+                    print("沒有資料")
+                    return
+                }
+
+                do {
+                    
+                    //將資料結構帶入解析Json
+                    let json = try JSONDecoder().decode(JsonData.self, from: unwappData)
+                    guard json.result == "0" else {
+                        print("server 告知 資訊有誤")
+                        return
+                    }
+                    print(json)
+                    //UserInfoModel會一直存在，所以把userModel 存放在UserInfoModel，這樣所有地方都可以取得到User資料
+                    UserInfoModel.sharedInstance.userInfo = json.data.user
+                    
+                    //因為URLTask 是開一個執行緒，所以結束後要做UI處理的話要回到主執行緒上
+                    DispatchQueue.main.async {
+                        self.showAlert(message: "登入成功")
+                    }
+                    
+                }catch {
+                    print("data 轉 jsonObject 失敗")
+                }
+            }
+            
+        }
+        
         
         
         
@@ -57,7 +102,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    
+
     
 }
 //擴充 LoginViewController 使其遵從 UITextFieldDelegate

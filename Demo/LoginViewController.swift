@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: BaseViewController {
 
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     @IBOutlet weak var accountTextField: BaseTextField!
     
@@ -22,6 +23,11 @@ class LoginViewController: BaseViewController {
         accountTextField.delegate = self
 
         passwordTextField.delegate = self
+        
+        
+        self.title = "登入"
+        
+        
     }
     
     
@@ -44,8 +50,17 @@ class LoginViewController: BaseViewController {
         //把key 跟 資料建立起來。
         let dictionary = ["email":email,"password":password]
 
+        //開始轉動
+        activityIndicatorView.startAnimating()
+        //關閉使用者交互，就是讓使用者無法點擊畫面
+        self.view.isUserInteractionEnabled = false
+        
+        
+        
         NetworkManage.sharedInstance.urlTask(urlString: SERVER_URL_STRING + "boss/login", method: .POST, params: dictionary) { (data, response, error) in
-            
+
+            sleep(5)
+
             if let httpError = error {
                 //印出失敗的內容
                 print("失敗 : \(httpError.localizedDescription)")
@@ -81,6 +96,12 @@ class LoginViewController: BaseViewController {
                     
                     //因為URLTask 是開一個執行緒，所以結束後要做UI處理的話要回到主執行緒上
                     DispatchQueue.main.async {
+                        
+                        //停止轉動
+                        self.activityIndicatorView.stopAnimating()
+                        //打開使用者交互，讓使用者可以點擊畫面
+                        self.view.isUserInteractionEnabled = true
+
                         self.showAlert(message: "登入成功")
                     }
                     
@@ -102,7 +123,10 @@ class LoginViewController: BaseViewController {
         
        let registerViewController =  self.storyboard?.instantiateViewController(withIdentifier: "RgisterViewController") as! RgisterViewController
         
-        self.present(registerViewController, animated: true, completion: nil)
+//        self.present(registerViewController, animated: true, completion: nil)
+
+        
+        self.navigationController?.pushViewController(registerViewController, animated: true)
         
     }
     

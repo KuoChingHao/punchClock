@@ -10,8 +10,7 @@
 2. 2018 /08 /04
     1. Login API
     2. UINavigationController
-    3. Animation 初級
-    4. UIActivityIndicatorView
+    3. UIActivityIndicatorView
   
 3. 2018 /08 /18
     1. UserDefaults

@@ -37,6 +37,11 @@ class RgisterViewController: BaseViewController {
         passwordTextField.placeholder = "password"
         passwordConfirmTextField.placeholder = "password confirm"
         nicknameTextField.placeholder = "nickname"
+        
+        
+        self.title = "註冊"
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -49,9 +49,9 @@ class GuideViewController: UIViewController {
 
     @IBAction func okButtonPress(_ sender: Any) {
         
-        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
         
-        self.present(loginViewController, animated: true, completion: nil)
+        self.present(loginViewController!, animated: true, completion: nil)
  
     }
     

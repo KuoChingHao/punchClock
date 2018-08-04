@@ -64,6 +64,11 @@ class LoginViewController: BaseViewController {
 
                 do {
                     
+                    let testJson = try JSONSerialization.jsonObject(with: unwappData, options: [])
+                    
+                    print(testJson)
+                    
+                    
                     //將資料結構帶入解析Json
                     let json = try JSONDecoder().decode(JsonData.self, from: unwappData)
                     guard json.result == "0" else {

@@ -24,6 +24,7 @@
 		2278A4CE210314D600DC6FC1 /* DefineString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278A4CD210314D600DC6FC1 /* DefineString.swift */; };
 		2278A4D02103165400DC6FC1 /* NetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278A4CF2103165400DC6FC1 /* NetworkManage.swift */; };
 		2278A4D221031F6500DC6FC1 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278A4D121031F6500DC6FC1 /* UserInfoModel.swift */; };
+		2283FE102127FB7100A17F9B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283FE0F2127FB7100A17F9B /* MainViewController.swift */; };
 		228D2C7B211580240070EDC6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228D2C7A211580240070EDC6 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		2278A4CD210314D600DC6FC1 /* DefineString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineString.swift; sourceTree = "<group>"; };
 		2278A4CF2103165400DC6FC1 /* NetworkManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManage.swift; sourceTree = "<group>"; };
 		2278A4D121031F6500DC6FC1 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		2283FE0F2127FB7100A17F9B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		228D2C7A211580240070EDC6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				2278A4CD210314D600DC6FC1 /* DefineString.swift */,
 				2278A4CF2103165400DC6FC1 /* NetworkManage.swift */,
 				2278A4D121031F6500DC6FC1 /* UserInfoModel.swift */,
+				2283FE0F2127FB7100A17F9B /* MainViewController.swift */,
 				2215974720F094CA00AB4D37 /* Main.storyboard */,
 				2215974A20F094CC00AB4D37 /* Assets.xcassets */,
 				2215974C20F094CC00AB4D37 /* LaunchScreen.storyboard */,
@@ -189,6 +192,7 @@
 				2278A4D221031F6500DC6FC1 /* UserInfoModel.swift in Sources */,
 				228D2C7B211580240070EDC6 /* BaseViewController.swift in Sources */,
 				2240F4DF20F9DFCE0066FB93 /* RgisterViewController.swift in Sources */,
+				2283FE102127FB7100A17F9B /* MainViewController.swift in Sources */,
 				2215976020F0A4D900AB4D37 /* GuideViewController.swift in Sources */,
 				2278A4D02103165400DC6FC1 /* NetworkManage.swift in Sources */,
 				2215974620F094CA00AB4D37 /* ViewController.swift in Sources */,

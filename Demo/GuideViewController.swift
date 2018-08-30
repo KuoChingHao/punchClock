@@ -49,6 +49,11 @@ class GuideViewController: UIViewController {
 
     @IBAction func okButtonPress(_ sender: Any) {
         
+        
+        
+        UserDefaults.standard.set(true, forKey: checkSeeGuide)
+        
+        
         let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
         
         self.present(loginViewController!, animated: true, completion: nil)

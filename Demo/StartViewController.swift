@@ -24,10 +24,27 @@ class StartViewController: UIViewController {
 
     @IBAction func startButtonAction(_ sender: Any) {
         
-        let guideViewController = self.storyboard?.instantiateViewController(withIdentifier: "GuideViewController") as! GuideViewController
 
         
-        self.present(guideViewController, animated: true, completion: nil)
+        let isSeeGuide = UserDefaults.standard.bool(forKey: checkSeeGuide)
+        
+        if isSeeGuide == true {
+            
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            self.present(loginViewController!, animated: true, completion: nil)
+
+            
+        }else {
+            
+            let guideViewController = self.storyboard?.instantiateViewController(withIdentifier: "GuideViewController") as! GuideViewController
+            
+            self.present(guideViewController, animated: true, completion: nil)
+
+            
+        }
+        
+
         
     }
     

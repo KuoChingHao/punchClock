@@ -91,12 +91,13 @@ class LoginViewController: BaseViewController {
                         return
                     }
                     print(json)
-                    //UserInfoModel會一直存在，所以把userModel 存放在UserInfoModel，這樣所有地方都可以取得到User資料
-                    UserInfoModel.sharedInstance.userInfo = json.data.user
                     
                     //因為URLTask 是開一個執行緒，所以結束後要做UI處理的話要回到主執行緒上
                     DispatchQueue.main.async {
                         
+                        //UserInfoModel會一直存在，所以把userModel 存放在UserInfoModel，這樣所有地方都可以取得到User資料
+                        UserInfoModel.sharedInstance.userInfo = json.data.user
+
                         //停止轉動
                         self.activityIndicatorView.stopAnimating()
                         //打開使用者交互，讓使用者可以點擊畫面

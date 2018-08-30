@@ -12,7 +12,23 @@ class UserInfoModel: NSObject {
 
     static let sharedInstance = UserInfoModel()
     
-    var userInfo : UserModel?
+    var userInfo : UserModel? {
+        didSet{
+            if let userInfo = userInfo {
+                
+                
+                
+                let userInfoDict = ["nickname" : userInfo.nickname,
+                                    "email" : userInfo.email,
+                                    "user_id" : userInfo.user_id,
+                                    "token" : userInfo.token]
+                
+                UserDefaults.standard.set(userInfoDict, forKey: "userInfo")
+            }else {
+                UserDefaults.standard.removeObject(forKey: "userInfo")
+            }
+        }
+    }
     
 }
 
